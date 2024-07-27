@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dealership
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dealership
+  template:
+    metadata:
+      labels:
+        app: dealership
+    spec:
+      containers:
+      - name: dealership
+        image: us.icr.io/ton123/dealership:latest
+        ports:
+        - containerPort: 8000
+      imagePullSecrets:
+      - name: ibm-cr-secret

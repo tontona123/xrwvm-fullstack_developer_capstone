@@ -1,6 +1,5 @@
 FROM python:3.9.18-slim-bookworm
 
-
 WORKDIR /python-docker
 
 COPY requirements.txt requirements.txt
